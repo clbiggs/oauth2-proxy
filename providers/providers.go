@@ -193,7 +193,7 @@ func providerRequiresOIDCProviderVerifier(providerType options.ProviderType) (bo
 		options.GoogleProvider, options.KeycloakProvider, options.LinkedInProvider, options.LoginGovProvider,
 		options.NextCloudProvider, options.SourceHutProvider:
 		return false, nil
-	case options.OIDCProvider, options.ADFSProvider, options.AzureProvider, options.CidaasProvider,
+	case options.OIDCProvider, options.NISProvider, options.ADFSProvider, options.AzureProvider, options.CidaasProvider,
 		options.GitLabProvider, options.KeycloakOIDCProvider, options.MicrosoftEntraIDProvider:
 		return true, nil
 	default:

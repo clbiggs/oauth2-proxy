@@ -72,6 +72,8 @@ func NewProvider(providerConfig options.Provider) (Provider, error) {
 		return NewOIDCProvider(providerData, providerConfig.OIDCConfig), nil
 	case options.SourceHutProvider:
 		return NewSourceHutProvider(providerData), nil
+	case options.NISProvider:
+		return NewNISProvider(providerData, providerConfig.OIDCConfig), nil
 	default:
 		return nil, fmt.Errorf("unknown provider type %q", providerConfig.Type)
 	}

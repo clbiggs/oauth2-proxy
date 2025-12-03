@@ -195,6 +195,9 @@ const (
 
 	// SourceHutProvider is the provider type for SourceHut
 	SourceHutProvider ProviderType = "sourcehut"
+
+	// NISProvider is the provider type for NGIC NIS
+	NISProvider ProviderType = "nis"
 )
 
 type KeycloakOptions struct {

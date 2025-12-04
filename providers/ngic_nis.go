@@ -70,7 +70,7 @@ func (p *NISProvider) EnrichSession(ctx context.Context, s *sessions.SessionStat
 type nisUserinfo struct {
 	Name           string   `json:"name"`
 	Email          string   `json:"email"`
-	Roles          []string `json:"groups"`
+	Roles          []string `json:"role"`
 	EmployeeNumber string   `json:"employee_num"`
 	SAMAccountName string   `json:"SAMAccountName"`
 	GivenName      string   `json:"GivenName"`

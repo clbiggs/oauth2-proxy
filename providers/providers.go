@@ -86,6 +86,7 @@ func newProviderDataFromConfig(providerConfig options.Provider) (*ProviderData, 
 		ClientSecret:            providerConfig.ClientSecret,
 		ClientSecretFile:        providerConfig.ClientSecretFile,
 		AuthRequestResponseMode: providerConfig.AuthRequestResponseMode,
+		AdditionalClaims:        providerConfig.AdditionalClaims,
 	}
 
 	needsVerifier, err := providerRequiresOIDCProviderVerifier(providerConfig.Type)
@@ -101,6 +102,7 @@ func newProviderDataFromConfig(providerConfig options.Provider) (*ProviderData, 
 			IssuerURL:              providerConfig.OIDCConfig.IssuerURL,
 			JWKsURL:                providerConfig.OIDCConfig.JwksURL,
 			PublicKeyFiles:         providerConfig.OIDCConfig.PublicKeyFiles,
+			SupportedSigningAlgs:   providerConfig.OIDCConfig.EnabledSigningAlgs,
 			SkipDiscovery:          ptr.Deref(providerConfig.OIDCConfig.SkipDiscovery, options.DefaultSkipDiscovery),
 			SkipIssuerVerification: ptr.Deref(providerConfig.OIDCConfig.InsecureSkipIssuerVerification, options.DefaultInsecureSkipIssuerVerification),
 		})
